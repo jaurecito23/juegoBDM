@@ -1,28 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JuegoBDM</title>
-</head>
-<body>
+<?php 
 
-    <header class='header'> 
+include "funciones.php";
+include "database.php";
 
-        <div class="contenido__header">
-
-            <p>Encabezado</p>
-
-        </div>
-
-    </header>
+$db = conectarDB();
 
 
+$nombre = $_GET["nombre"];
+$id = intval($_GET["id"]);
+$id = filter_var($id,FILTER_VALIDATE_INT);
+
+    if($_SERVER["REQUEST_METHOD"] === "POST"){
+
+        header("Location: intro2.php?id=${id}?nombre='${nombre}'");
+
+
+    }
+
+?>
     <main class='main'>
         <div class="contenido__main">
 
-             <h2 class='hola'> Hola! </h2>
+             <h2 class='hola'> Hola <?php echo $nombre ?>! </h2>
                 
                 <div class="contenedor__intro">
                     <p class='intro'>
@@ -40,7 +39,9 @@
                         comparten tus mismos valores ?
                     </p>
                 </div>
-                <button class='btn'> Siguiente </button>
+                <form method="POST" action="intro2.php">
+                    <input class='btn' type="submit" value="Siguiente"> 
+                </form>
         </div> 
     </main>
 
