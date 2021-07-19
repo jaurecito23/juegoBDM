@@ -93,7 +93,7 @@ include "headerlogin.php";
 
 
 
-                  <form class="<?php echo $post ? "" : "oculto"?> form_ingresar" >
+                  <form class="<?php echo $post ? "" : "oculto"?> form_ingresar"        action="intro.php " >
 
                         <div>
                             <input type='text' name="legajo" class="input" value="<?php echo $legajoIngresado?>" placeholder="Ingrese Su Legajo">
