@@ -105,7 +105,7 @@ $opciones = [];
     }
 
 
-        $query = "INSERT INTO respuestas (usuarioId,grupo) VALUES('${id}','${sigla}');";
+        $query = "INSERT INTO respuestas (usuarioId,grupo,dia) VALUES('${id}','${sigla}','${dia}');";
 
         $resultado = mysqli_query($db,$query);
 
