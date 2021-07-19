@@ -76,16 +76,16 @@ include "headerlogin.php";
 
     <div class='contenido__main'>
 
-        <h1 class='titulo_main'> Bienvenidos </h1>
+        <h1 class='titulo_main'> Biénvenidos </h1>
 
         <div class='contenedor__form'>
 
 
 
-            <form class='<?php echo $post ? "oculto" : "";?> form__main form_legajo' method="POST">
+            <form class='<?php echo $post ? "oculto" : "";?> form__main form_legajo' method="POST" >
                     <fieldset>
                         <div>
-                            <input type='text' class="input" value='<?php echo $legajoIngresado ?>' placeholder="Ingrese Su Legajo">
+                            <input type='text' name="legajo" class="input" value='<?php echo $legajoIngresado ?>' placeholder="Ingrese Su Legajo">
                         </div>
                             <input class='btn btn-cuadrado' type='submit' value='Buscar'>
                     </fieldset>
@@ -93,17 +93,17 @@ include "headerlogin.php";
 
 
 
-            <form class="<?php echo $post ? "" : "oculto"?> form_ingresar">
+                  <form class="<?php echo $post ? "" : "oculto"?> form_ingresar" >
 
                         <div>
-                            <input type='text' class="input" value="<?php echo $legajoIngresado?>" placeholder="Ingrese Su Legajo">
+                            <input type='text' name="legajo" class="input" value="<?php echo $legajoIngresado?>" placeholder="Ingrese Su Legajo">
                         </div>
 
                         <div>
-                        <p><?php echo $nombre;?></p>
+                        <p class="input"><?php echo $nombre;?></p>
                         </div>
 
-                        <p class="no-soy">No soy yo - contactar al administrador </p>
+                        <p class="no-soy">No soy yo - <a href="#">contactar al administrador &raquo;</a> </p>
 
                         <div>
                             <input type="hidden" value="<?php echo $id?>">
@@ -122,8 +122,7 @@ include "headerlogin.php";
 
     <div class="contenido__footer">
 
-        <p>Todos los derechos reservados</p>
-
+      <p> Todos los derechos reservados &copy;</p>
     </div>
 
 </footer>

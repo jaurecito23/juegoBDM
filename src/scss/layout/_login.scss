@@ -51,11 +51,18 @@
     }
 
 
-    .no-soy{
+    .no-soy {
+
+        margin: auto;
         font-family: $font;
         color: $amarillo;
         font-size: .7rem;
         text-align: center;
+        a{
 
+            color: $amarillo;
+            text-decoration: none;
+
+        }
 
     }
