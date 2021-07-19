@@ -32,7 +32,7 @@ foreach($resultado as $apodo){
         // Validar la imagen y el apodo
 
         $apodoSeleccionado = $_POST["apodo"] ?? NULL;
-        $imagen = $_FILES["image"]["tmp_name"] ?? NULL;
+        $imagen = $_FILES["image"] ?? NULL;
 
 
 
@@ -66,14 +66,14 @@ foreach($resultado as $apodo){
 
                 //Almacenar Imagen en server
 
-                $carpetaImagen = "imagenes/fotodeperfil";
+                $carpetaImagen = "imagenes/fotodeperfil/";
 
                 if(!is_dir($carpetaImagen)){
 
                         mkdir($carpetaImagen);
                 }
 
-                move_uploaded_file()
+                move_uploaded_file($imagen["tmp_name"],$carpetaImagen.$nombreImagen);
 
 
 
@@ -87,7 +87,7 @@ foreach($resultado as $apodo){
 
                 if($resultado){
 
-                    header("Location: intro3.php?id=${id}?nombre='${nombre}'");
+                    header("Location: cuestionario.php?id=${id}&nombre='${nombre}'");
 
 
                 }

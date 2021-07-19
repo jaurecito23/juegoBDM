@@ -22,7 +22,7 @@ $id = filter_var($id,FILTER_VALIDATE_INT);
                 que cosa compartimos?
                 ¿Con este juego vamos a descubrir que valores
                 forman parte de la amistad para nosotros y con quienes
-                lo compartimos?
+                los compartimos?
             </p>
         </div>
 
