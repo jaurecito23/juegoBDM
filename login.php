@@ -58,7 +58,7 @@ if($_SERVER["REQUEST_METHOD"]==="POST"){
 // }
 
 
-include "header.php";
+include "headerlogin.php";
 ?>
 
 
@@ -76,51 +76,59 @@ include "header.php";
 
     <div class='contenido__main'>
 
-        <h1 class='titulo_main'> Bienvenidos </h1>
+        <h1 class='titulo_main'> Biénvenidos </h1>
 
         <div class='contenedor__form'>
 
-            <form class='<?php  echo $post ? "oculto" : ""?> form__main form_legajo' method="POST">
-                <fieldset>
-                    <div>
-                        <input type='text' name="legajo" value="<?php echo $legajoIngresado ?>" placeholder="Ingrese Su Legajo">
-                    </div>
-                    <input class='btn' type='submit' value='Buscar'>
-                </fieldset>
-            </form>
-            <form class="<?php echo $post ? "" : "oculto"?> form_ingresar" action="intro.php">
 
-                <div>
-                    <input type='text' value="<?php echo $legajoIngresado ?>" placeholder="Ingrese Su Legajo">
-                </div>
 
-                <div>
-                    <p><?php echo $nombre;?></p>
-                </div>
+            <form class='<?php echo $post ? "oculto" : "";?> form__main form_legajo' method="POST" >
+                    <fieldset>
+                        <div>
+                            <input type='text' name="legajo" class="input" value='<?php echo $legajoIngresado ?>' placeholder="Ingrese Su Legajo">
+                        </div>
+                            <input class='btn btn-cuadrado' type='submit' value='Buscar'>
+                    </fieldset>
+                </form>
 
-                <p>Si su nombre es correcto presione entrar: </p>
 
-                <div>
-                    <input type="hidden" name="id" value="<?php echo $id?>">
-                    <input type="hidden" name="nombre" value="<?php echo $nombre ?>">
-                    <input class='btn' type='submit' value='Entrar'>
-                </div>
 
-            </form>
+                  <form class="<?php echo $post ? "" : "oculto"?> form_ingresar" >
+
+                        <div>
+                            <input type='text' name="legajo" class="input" value="<?php echo $legajoIngresado?>" placeholder="Ingrese Su Legajo">
+                        </div>
+
+                        <div>
+                        <p class="input"><?php echo $nombre;?></p>
+                        </div>
+
+                        <p class="no-soy">No soy yo - <a href="#">contactar al administrador &raquo;</a> </p>
+
+                        <div>
+                            <input type="hidden" value="<?php echo $id?>">
+                            <input class='btn' type='submit' value='Entrar'>
+                        </div>
+
+                </form>
+
         </div>
     </div>
 </main>
+
+
 
 <footer class='footer'>
 
     <div class="contenido__footer">
 
-        <p>Todos los derechos reservados</p>
-
+      <p> Todos los derechos reservados &copy;</p>
     </div>
 
 </footer>
 
+
+<script src="build/js/bundle.min.js"></script>
 
 </body>
 </html>

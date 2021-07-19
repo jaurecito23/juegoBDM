@@ -12,10 +12,20 @@
     </head>
     <body>
 
-        <header class='header1'>
+        <header class='header2'>
 
-        <div class="contenido_header">
-          <div class="imagen_header">
+        <div class="contenido_header2">
+
+        <div class="contenedor_apodo-imagen">
+            <div>
+                <p class="apodo"> APODO <p>
+            </div>
+            <div class="contenedor_imagen--perfil blur1">
+                <img src="imagenes/fotodeperfil/user2.jpg">
+            </div>
+        </div>
+
+        <div class="imagen_header ">
                 <img src="build/img/header2.webp">
             </div>
         </div>

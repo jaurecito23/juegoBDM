@@ -1,0 +1,100 @@
+.header1,.header2,.header-login{
+    width: 100%;
+    height: 100%;
+    background-color: $rojo;
+    padding: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .contenido_header{
+        padding-top: 1rem ;
+        padding-bottom: .1rem ;
+        width: 60%;
+    }
+
+    .imagen_header{
+
+        margin: auto;
+        width: 80%;
+
+    }
+
+
+}
+
+.header-login{
+
+    background-color: $blanco;
+    .contenido_header{
+        width: 85%;
+
+    }
+
+    margin-bottom: 5rem;
+}
+
+
+
+.contenido_header2{
+
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: 35% 65%;
+
+.contenedor_imagen--perfil{
+
+    border-radius: .1rem;
+        margin: auto;
+        width: 70%;
+        height: 70%;
+
+}
+
+
+
+
+        .apodo{
+
+        width: 130%;
+        background-color: $gris;
+        color: black;
+        padding: .5rem 1rem;
+        border-radius: .88rem;
+        text-align: center;
+        margin-bottom: 1rem;
+
+        }
+
+        .imagen_header{
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 0rem;
+
+        }
+
+}
+
+.contenedor_apodo-imagen{
+
+    display: grid;
+    grid-template-rows: 30% 70%;
+
+}
+
+
+.blur1{
+    filter: blur(3px);
+}
+.blur2{
+    filter: blur(2px);
+}
+.blur3{
+    filter: blur(1.5px);
+}
+.blur4{
+    filter: blur(1px);
+}

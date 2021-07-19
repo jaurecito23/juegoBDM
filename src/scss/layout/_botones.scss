@@ -1,0 +1,26 @@
+.btn{
+
+    display:block;
+    background-color: $amarillo;
+    color: $rojo-oscuro;
+    font-size: 1rem;
+    font-family: $font;
+    font-weight: bold;
+    padding: .5rem 1.6rem;
+    text-align: center;
+    border: none;
+    text-transform: uppercase;
+    border-radius: .9rem;
+    box-shadow:  0px  4px 8px -1px black;
+    margin: 1rem auto 1rem auto;
+    width: auto;
+
+}
+
+.btn-cuadrado{
+
+    border-radius: .1rem;
+
+
+
+}

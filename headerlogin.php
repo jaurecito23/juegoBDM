@@ -12,13 +12,11 @@
     </head>
     <body>
 
-        <header class='header1'>
+        <header class='header-login'>
 
         <div class="contenido_header">
           <div class="imagen_header">
-                <img src="build/img/header2.webp">
+                <img src="build/img/headerlogin.webp">
             </div>
         </div>
         </header>
-
-
