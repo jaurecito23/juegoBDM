@@ -5,7 +5,9 @@
 
     $db = conectarDB();
 
-$id = $_GET["id"];
+    session_start();
+
+$id = $_SESSION["id"];
 
 $query = "SELECT * FROM users WHERE id = '${id}'";
 $resultado = mysqli_query($db,$query);

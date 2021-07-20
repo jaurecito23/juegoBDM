@@ -5,8 +5,8 @@ include "funciones/database.php";
 
 $db = conectarDB();
 
-$nombre = $_GET["nombre"];
-$id = intval($_GET["id"]);
+session_start();
+$id = intval($_SESSION["id"]);
 $id = filter_var($id,FILTER_VALIDATE_INT);
 $errores = [];
 $apodos = [];
@@ -87,6 +87,10 @@ foreach($resultado as $apodo){
 
 
                 if($resultado){
+
+                        $query="UPDATE users SET registrado='1' WHERE id='${id}';";
+                          $resultado = mysqli_query($db,$query);
+                            $_SESSION["registrado"] = true;
 
                     header("Location: cuestionario.php?id=${id}");
 

@@ -3,8 +3,9 @@
 include "funciones/debuguear.php";
 include "funciones/database.php";
 
+session_start();
 
-$id = intval($_GET["id"]);
+$id = intval($_SESSION["id"]);
 $id = filter_var($id,FILTER_VALIDATE_INT);
 
 

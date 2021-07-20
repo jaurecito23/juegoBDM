@@ -5,7 +5,9 @@ include "funciones/debuguear.php";
 
 $db = conectarDB();
 
-$id=$_GET["id"];
+session_start();
+
+$id= $_SESSION ["id"];
 $id=intval($id);
 
 $day = date("l");
@@ -39,6 +41,7 @@ $apodo = "";
 foreach ($resultado as $user){
 
     $apodo = $user["apodo"];
+    $imagen = $user["imagen"];
 
 }
 
@@ -49,6 +52,14 @@ $query = "SELECT * FROM respuestas WHERE usuarioId = '${id}' AND dia ='${dia}';"
 
 
 $resultado = mysqli_query($db,$query);
+
+if($resultado -> num_rows == 0){
+
+    header("Location: noparticipo.php");
+
+}
+
+
 
 
 
@@ -69,25 +80,24 @@ $cantidad = "";
 foreach ($resultado as $group) {
     $cantidad = $group["cantidad"];
 }
+
+
+
 $cantidad -= 1;
-include "header.php";
+include "header3.php";
+
 ?>
 
 <main class='main'>
     <div class="contenido__main">
 
-        <h2 class='hola'> Hola <?php echo $apodo ?>! </h2>
 
-        <div class="contenedor_foto">
-            <img src="#">
-            <div class="coincidencias">
+        <h3 class="texto">Las nuevas preguntas estarán disponibles desde las 8:00 hs.</h3>
 
-                <h2><?php echo $cantidad ?> coincidencias </h2>
 
             </div>
-            <h3> Las preguntas estaran dsiponible desde las 8hs</h3>
 
-            <button class='btn'> Siguiente </button>
+
         </div>
 </main>
 

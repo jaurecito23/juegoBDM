@@ -5,8 +5,8 @@
 
    $db = conectarDB();
 
-
-    $id = $_GET["id"];
+   session_start();
+    $id = $_SESSION["id"];
 
 
 
@@ -36,6 +36,7 @@
     }
 
 
+
     //Traer apodo
 
     $query = "SELECT * FROM users WHERE id = ${id} LIMIT 1";
@@ -45,13 +46,21 @@
 
     $apodo = "";
     $imagen = "";
+    $yarespodio = "";
 
 
 
     foreach($resultado as $user){
-
         $apodo = $user["apodo"];
         $imagen= $user["imagen"];
+        $yarespondio = $user["yarespondio"];
+
+    }
+
+    if($yarespondio == $dia){
+
+        header("Location: findia.php");
+
     }
 
 
@@ -113,8 +122,9 @@ $opciones = [];
         $resultado = mysqli_query($db,$query);
 
         if($resultado){
-
-            header("Location: findia.php?id=${id}&nombre=5{id}");
+            $query = "UPDATE users SET yarespondio='${dia}' WHERE id='${id}'";
+            $resultado = mysqli_query($db,$query);
+            header("Location: findia.php");
 
         }
 

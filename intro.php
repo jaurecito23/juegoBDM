@@ -6,8 +6,9 @@ include "funciones/database.php";
 $db = conectarDB();
 
 
+session_start();
 
-$id = intval($_GET["id"]);
+$id = intval($_SESSION["id"]);
 $id = filter_var($id,FILTER_VALIDATE_INT);
 
 include "header.php";
@@ -34,7 +35,7 @@ include "header.php";
 
 
         <form action="intro2.php">
-            <input type="hidden" name="id" value="<?php echo $id?>">
+
             <input class='btn' type="submit" value="Siguiente">
         </form>
     </div>

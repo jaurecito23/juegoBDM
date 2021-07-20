@@ -10,14 +10,48 @@ $legajoIngresado =  $_POST['legajo'] ?? null;
 $post = false;
 $errores = [];
 //Id del usuario
-
 $id = null;
+$registrado = false;
+
+
+
+$date=date("H");
+$date = intval($date);
+
+
+
+
+
+session_start();
+if(isset($_SESSION["loginBDM"])){
+
+    if($_SESSION["loginBDM"] === true){
+
+        if($date > 20 || $date < 8){
+
+            header("Location: coincidencias.php");
+
+          }elseif($_SESSION["registrado"] === true ){
+
+
+            header("Location: cuestionario.php");
+
+        }else{
+
+            header("Location: intro3.php");
+
+        }
+
+    }
+
+}
 
 
 
 if($_SERVER["REQUEST_METHOD"]==="POST"){
 
         $legajoIngresado = $_POST["legajo"];
+        $apodo = "";
         $query = "SELECT * FROM users WHERE legajo = '${legajoIngresado}';";
         $resultado = mysqli_query($db,$query);
 
@@ -36,16 +70,32 @@ if($_SERVER["REQUEST_METHOD"]==="POST"){
 
                 }else{
 
-                    $post = true;
+
                         // Iniciar una session en el server
 
                         foreach ($resultado as $usuario) {
                             $nombre = $usuario["nombre"];
                             $id = $usuario["id"];
 
+                            $registrado = $usuario["registrado"];
 
-                            }
+                        }
 
+                        $_SESSION["id"] = $id;
+                        $_SESSION["loginBDM"] = true;
+
+                        if($date > 20 || $date < 8){
+
+                            header("Location: coincidencias.php");
+
+                          }else if ($registrado == 1){
+
+                              header("Location: cuestionario.php");
+
+                          }
+
+
+                        $post = true;
            }
 
         }else{
@@ -106,7 +156,7 @@ include "headerlogin.php";
                         <p class="no-soy">No soy yo - <a href="#">contactar al administrador &raquo;</a> </p>
 
                         <div>
-                        <input type="hidden" name="id" value="<?php echo $id?>">
+                        <!-- <input type="hidden" name="id" value="<?php echo $id?>"> -->
 
                             <input class='btn' type='submit' value='Entrar'>
                         </div>
