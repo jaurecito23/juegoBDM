@@ -1,0 +1,62 @@
+.dia{
+
+    text-align: center;
+    margin-top: 1rem;
+    text-decoration: underline;
+}
+
+.pregunta-proceso{
+
+    display: flex;
+
+}
+
+.form__respuesta{
+
+    margin: auto;
+
+    width: 90%;
+
+    .proceso{
+
+
+        color: $gris;
+        background-color: $rojo;
+
+        border-radius: .3rem;
+        padding: .1rem .2rem;
+        font-weight: bold;
+        font-family: $font;
+        margin: 1.6rem .5rem 1.6rem 0rem;
+        font-size:1.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .titulo{
+
+        margin-top: 2rem;
+
+    }
+
+}
+
+.inputs__respuestas{
+
+    width: 70%;
+    margin: 1.6rem auto;
+    .texto{
+
+        color: $rojo;
+
+    }
+
+    .input-respuesta{
+
+        margin-bottom: 2rem;
+
+    }
+}
+

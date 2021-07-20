@@ -76,7 +76,7 @@ include "headerlogin.php";
 
     <div class='contenido__main'>
 
-        <h1 class='titulo_main'> Biénvenidos </h1>
+        <h1 class='titulo_main'> Bienvenidos </h1>
 
         <div class='contenedor__form'>
 
@@ -93,7 +93,7 @@ include "headerlogin.php";
 
 
 
-                  <form class="<?php echo $post ? "" : "oculto"?> form_ingresar"        action="intro.php " >
+                  <form class="<?php echo $post ? "" : "oculto"?> form_ingresar"        action="intro.php" >
 
                         <div>
                             <input type='text' name="legajo" class="input" value="<?php echo $legajoIngresado?>" placeholder="Ingrese Su Legajo">
@@ -106,11 +106,14 @@ include "headerlogin.php";
                         <p class="no-soy">No soy yo - <a href="#">contactar al administrador &raquo;</a> </p>
 
                         <div>
-                            <input type="hidden" value="<?php echo $id?>">
+                        <input type="hidden" name="id" value="<?php echo $id?>">
+
                             <input class='btn' type='submit' value='Entrar'>
                         </div>
 
                 </form>
+
+
 
         </div>
     </div>
@@ -118,15 +121,8 @@ include "headerlogin.php";
 
 
 
-<footer class='footer'>
 
-    <div class="contenido__footer">
-
-      <p> Todos los derechos reservados &copy;</p>
-    </div>
-
-</footer>
-
+<?php include "footer.php"?>
 
 <script src="build/js/bundle.min.js"></script>
 

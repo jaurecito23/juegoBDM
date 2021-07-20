@@ -1,8 +1,16 @@
-.contenido__footer{
-position: relative;
+.footer{
+position: fixed;
 bottom: 1rem;
+left: auto;
+right: auto;
+width: 100%;
 
 
+.contenido__footer{
+
+    margin: auto;
+
+}
     p{
         color: $gris;
         text-align: center;

@@ -18,10 +18,10 @@
 
         <div class="contenedor_apodo-imagen">
             <div>
-                <p class="apodo"> APODO <p>
+                <p class="apodo"> <?php echo $apodo;?> <p>
             </div>
             <div class="contenedor_imagen--perfil blur1">
-                <img src="imagenes/fotodeperfil/user2.jpg">
+                <img src="imagenes/fotodeperfil/<?php echo $imagen;?>">
             </div>
         </div>
 

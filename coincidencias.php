@@ -92,15 +92,7 @@ include "header.php";
 </main>
 
 
-<footer class='footer'>
-
-    <div class="contenido__footer">
-
-        <p>Todos los derechos reservados</p>
-
-    </div>
-
-</footer>
+<?php include "footer.php"?>
 
 
 </body>

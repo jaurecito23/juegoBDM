@@ -7,7 +7,7 @@
 
 
     $id = $_GET["id"];
-    $nombre = $_GET["nombre"];
+
 
 
 
@@ -44,11 +44,14 @@
 
 
     $apodo = "";
+    $imagen = "";
+
+
 
     foreach($resultado as $user){
 
         $apodo = $user["apodo"];
-
+        $imagen= $user["imagen"];
     }
 
 
@@ -129,41 +132,51 @@ include "header2.php";
 
 <main class="main">
 
-    <h2 class='hola'> Hola <?php echo $apodo ?>! </h2>
-
     <div class="contenedor__form">
         <form data-total=<?php echo $cantDePreg?> class="form" method="POST">
             <?php foreach($preguntas as $pregunta):?>
 
-            <div id=<?php echo $numPreg ?> class="oculto contenido__form">
-                <h2>Hoy es <?php echo $dia?></h2>
-                <h3> Proceso : <?php echo $numPreg?>/<?php echo $cantDePreg?> </h3>
+            <div id=<?php echo $numPreg ?> class="<?php if($numPreg != "1"){echo "oculto";};?> contenido__form">
+                <h2 class="titulo dia"><?php echo $dia?></h2>
+
 
                 <fieldset>
                     <div class="form__respuesta">
-                        <label> Pregunta <?php echo $numPreg?>:</label>
-                        <h2> <?php echo $pregunta; ?></h2>
+
+                        <div class="pregunta-proceso">
+                        <label class="proceso"><?php echo $numPreg?>/<?php echo $cantDePreg?></label>
+
+                        <h2 class="titulo"> <?php echo $pregunta; ?></h2>
+                       </div>
                         <div class="inputs__respuestas">
-                            <label> <?php  $numP = $numPreg - 1; echo $opciones[$numP][0] ?> </label>
-                            <input class="respuesta" value="A" name="respuestas[<?php echo $numPreg ?>]" type="radio">
-                            <label> <?php  $num = $numPreg - 1; echo $opciones[$numP][1] ?> </label>
-                            <input class="respuesta" value="B" name="respuestas[<?php echo $numPreg ?>]" type="radio">
+                            <div class="input-respuesta">
+                                <input id="<?php echo $numPreg?>A" class="respuesta" value="A" name="respuestas[<?php echo $numPreg ?>]" type="radio">
+                                 <label for="<?php echo $numPreg?>A" class="texto"> <?php  $numP = $numPreg - 1; echo $opciones[$numP][0] ?> </label>
+                           </div>
+
+                            <div class="input-respuesta">
+                                <input  id="<?php echo $numPreg?>B" class="respuesta" value="B" name="respuestas[<?php echo $numPreg ?>]" type="radio">
+                                <label for="<?php echo $numPreg?>B" class="texto"> <?php  $num = $numPreg - 1; echo $opciones[$numP][1] ?> </label>
+                            </div>
                         </div>
                     </div>
 
                 </fieldset>
 
 
-                <button class="siguiente btn<?php echo $numPreg?> oculto" type="button">Siguiente</button>
+                <button class="btn siguiente btn<?php echo $numPreg?> oculto" type="button">Siguiente</button>
             </div>
             <?php $numPreg += 1 ?>
             <?php endforeach?>
-            <input class="btn-enviar oculto" type="submit" value="Enviar">
+            <input class="btn btn-enviar oculto" type="submit" value="Enviar">
         </form>
     </div>
 </main>
 
-<script src="app.js"></script>
+<?php include "footer.php"?>
+
+
+<script src="build/js/bundle.min.js"></script>
 </body>
 
 

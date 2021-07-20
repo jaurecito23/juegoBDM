@@ -42,9 +42,10 @@ foreach($resultado as $apodo){
 
         }
 
-        if(!isset($imagen)){
 
-            $errores[] = "Debe seleccionar una imagen de perfil";
+        if($imagen["tmp_name"]===""){
+
+            $errores[] = "Debe seleccionar una imagen";
 
         }
 
@@ -87,7 +88,7 @@ foreach($resultado as $apodo){
 
                 if($resultado){
 
-                    header("Location: cuestionario.php?id=${id}&nombre='${nombre}'");
+                    header("Location: cuestionario.php?id=${id}");
 
 
                 }
@@ -119,28 +120,38 @@ include "header.php";
 
         <div class="contenido__form">
             <form class="form" method="POST" enctype="multipart/form-data">
-                <h2 class='hola'> Al comiénzo nadie sabe quien sos.
-                    Elegí un apodo. </h2>
+                <h2 class='titulo'> Elegí un apodo.</h2>
+                <p class="texto">Nadie sabrá quien sos hasta finalizar. Elegí un apodo para participar.</p>
 
-                <div class="contenido__select">
-                    <select name="apodo" class='select'>
-                        <option disabled selected>--Seleccionar Apodo--</option>
+             <div class="form_intro">
+
+                 <div class="contenido__select">
+                     <select class="input" name="apodo" class='select'>
+                        <option class="input" disabled selected>--Seleccionar Apodo--</option>
                         <?php foreach($apodos as $apodo):?>
-                        <option <?php echo $apodoSeleccionado === $apodo  ? "selected" : " "?>><?php echo $apodo; ?></option>
+                            <option <?php echo $apodoSeleccionado === $apodo  ? "selected" : " "?>><?php echo $apodo; ?></option>
                         <?php endforeach; ?>
                     </select>
                 </div>
 
                 <div class='contenido__foto'>
-                    <p>
-                        Sube una foto tuya. No te preocupes la mostraremos blureada(borrosa).
+
+                    <p class="titulo">Subí tu foto.</p>
+                    <p class="texto">
+                        Estará blureada asi no te reconocen hasta el final.
                     </p>
                 </div>
 
+            </div>
+            <div class="subir">
+                <label for="inputimagen" >
 
+                Elegir archivo
 
-                <legend>Subir Foto</legend>
-                <input type='file' name="image" placeholder="Subir Foto">
+                </label>
+
+                <input type='file' class="oculto"  id="inputimagen" name="image" placeholder="Subir Foto">
+            </div>
                 <input class='btn' type="submit" value="Siguiente">
             </form>
         </div>
@@ -150,13 +161,7 @@ include "header.php";
 </main>
 
 
-<footer class='footer'>
-
-    <div class="contenido__footer">
-
-        <p>Todos los derechos reservados</p>
-
-    </div>
+<?php include "footer.php"?>
 
 </footer>
 

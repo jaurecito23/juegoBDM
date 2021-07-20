@@ -17,7 +17,7 @@ foreach ($resultado as $user) {
     $imagen = $user["imagen"];
 }
 
-include "header.php";
+include "header2.php";
 
 ?>
 
@@ -25,34 +25,22 @@ include "header.php";
 <main class='main'>
     <div class="contenido__main">
 
-        <div>
-            <p>
-                Las nuevas preguntas estaran disponible
-                mañana a las 8.
+
+
+        <div class="findia">
+            <p class="titulo">
+                Mostraremos los resultados a las <span>21:00 hs</span>.
+            </p>
+            <p class="texto">
+
+                ¡Muchas Gracias por Responder!
+
             </p>
         </div>
+</main>
 
-        <div>
-            <p>
-                Mostraremos los resultados a las 21 hs
-            </p>
-        </div>
+        <?php include "footer.php"?>
 
+</body>
+</html>
 
-
-
-
-
-        <footer class='footer'>
-
-            <div class="contenido__footer">
-
-                <p>Todos los derechos reservados</p>
-
-            </div>
-
-        </footer>
-
-
-        </body>
-        </html>
