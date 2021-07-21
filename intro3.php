@@ -74,6 +74,9 @@ foreach($resultado as $apodo){
                         mkdir($carpetaImagen);
                 }
 
+
+
+
                 move_uploaded_file($imagen["tmp_name"],$carpetaImagen.$nombreImagen);
 
 
@@ -92,7 +95,7 @@ foreach($resultado as $apodo){
                           $resultado = mysqli_query($db,$query);
                             $_SESSION["registrado"] = true;
 
-                    header("Location: cuestionario.php?id=${id}");
+                    header("Location: cuestionario.php");
 
 
                 }
@@ -127,35 +130,35 @@ include "header.php";
                 <h2 class='titulo'> Elegí un apodo.</h2>
                 <p class="texto">Nadie sabrá quien sos hasta finalizar. Elegí un apodo para participar.</p>
 
-             <div class="form_intro">
+                <div class="form_intro">
 
-                 <div class="contenido__select">
-                     <select class="input" name="apodo" class='select'>
-                        <option class="input" disabled selected>--Seleccionar Apodo--</option>
-                        <?php foreach($apodos as $apodo):?>
+                    <div class="contenido__select">
+                        <select class="input" name="apodo" class='select'>
+                            <option class="input" disabled selected>--Seleccionar Apodo--</option>
+                            <?php foreach($apodos as $apodo):?>
                             <option <?php echo $apodoSeleccionado === $apodo  ? "selected" : " "?>><?php echo $apodo; ?></option>
-                        <?php endforeach; ?>
-                    </select>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+
+                    <div class='contenido__foto'>
+
+                        <p class="titulo">Subí tu foto.</p>
+                        <p class="texto">
+                            Estará blureada asi no te reconocen hasta el final.
+                        </p>
+                    </div>
+
                 </div>
+                <div class="subir">
+                    <label for="inputimagen">
 
-                <div class='contenido__foto'>
+                        Elegir archivo
 
-                    <p class="titulo">Subí tu foto.</p>
-                    <p class="texto">
-                        Estará blureada asi no te reconocen hasta el final.
-                    </p>
+                    </label>
+
+                    <input type='file' class="oculto" id="inputimagen" name="image" placeholder="Subir Foto">
                 </div>
-
-            </div>
-            <div class="subir">
-                <label for="inputimagen" >
-
-                Elegir archivo
-
-                </label>
-
-                <input type='file' class="oculto"  id="inputimagen" name="image" placeholder="Subir Foto">
-            </div>
                 <input class='btn' type="submit" value="Siguiente">
             </form>
         </div>

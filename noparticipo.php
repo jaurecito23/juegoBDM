@@ -8,9 +8,9 @@ include "header.php";
     <main class="main">
         <div class="contenido__main">
 
-            <p class="titulo">
+            <p class="intro">
 
-                Lamentamos no hayas podido participar
+                Lamentamos no hayas podido participar.
 
             </p>
 

@@ -92,13 +92,13 @@ include "header3.php";
     <div class="contenido__main">
 
 
-        <h3 class="texto">Las nuevas preguntas estarán disponibles desde las 8:00 hs.</h3>
+        <h3 class="texto texto-coincidencias">Las nuevas preguntas estarán disponibles desde las 8:00 hs.</h3>
 
 
-            </div>
+    </div>
 
 
-        </div>
+    </div>
 </main>
 
 

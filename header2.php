@@ -14,21 +14,20 @@
 
         <header class='header2'>
 
-        <div class="contenido_header2">
+            <div class="contenido_header2">
 
-        <div class="contenedor_apodo-imagen">
-            <div>
-                <p class="apodo"> <?php echo $apodo;?> <p>
-            </div>
-            <div class="contenedor_imagen--perfil blur1">
-                <img src="imagenes/fotodeperfil/<?php echo $imagen;?>">
-            </div>
-        </div>
+                <div class="contenedor_apodo-imagen">
+                    <div>
+                        <p class="apodo"> <?php echo $apodo;?>
+                        <p>
+                    </div>
+                    <div class="contenedor_imagen--perfil blur1">
+                        <img src="imagenes/fotodeperfil/<?php echo $imagen;?>">
+                    </div>
+                </div>
 
-        <div class="imagen_header ">
-                <img src="build/img/header2.webp">
+                <div class="imagen_header">
+                    <img src="build/img/header2.webp">
+                </div>
             </div>
-        </div>
         </header>
-
-

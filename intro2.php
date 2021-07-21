@@ -24,16 +24,16 @@ include "header.php";
             <h2 class="titulo"> Dinámica: </h2>
 
             <p class='texto'>
-            Todos los días debes responder una serie de preguntas.
-        </p>
-        <p class="texto">
+                Todos los días debes responder una serie de preguntas.
+            </p>
+            <p class="texto">
 
-            Nuestro sistema irá matcheando similitudes para armar grupos afines.
+                Nuestro sistema irá matcheando similitudes para armar grupos afines.
 
 
             </p>
 
-            <p class="intro">Preparate para jugar, divertirte y sorprenderte !</p>
+            <p class="intro">Preparate para jugar, divertirte y sorprenderte!</p>
 
         </div>
 
@@ -43,9 +43,8 @@ include "header.php";
 
 
 
-        <form action='intro3.php??id=<?php echo $id;?> ?>'>
-            <input type="hidden" name="id" value="<?php echo $id;?>">
-            <input type="hidden" name="nombre" value="<?php echo $nombre;?>">
+        <form action='intro3.php'>
+
             <input class="btn" type="submit" value="Siguiente">
         </form>
     </div>

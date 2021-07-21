@@ -1,6 +1,7 @@
 @import "base/variables";
 @import "base/globales";
 @import "base/reset";
+@import "base/mixins";
 
 
 @import "layout/header";
@@ -11,3 +12,4 @@
 @import "layout/alertas";
 @import "layout/cuestionarios";
 @import "layout/findia";
+@import "layout/coincidencias";

@@ -132,36 +132,36 @@ include "headerlogin.php";
 
 
 
-            <form class='<?php echo $post ? "oculto" : "";?> form__main form_legajo' method="POST" >
-                    <fieldset>
-                        <div>
-                            <input type='text' name="legajo" class="input" value='<?php echo $legajoIngresado ?>' placeholder="Ingrese Su Legajo">
-                        </div>
-                            <input class='btn btn-cuadrado' type='submit' value='Buscar'>
-                    </fieldset>
-                </form>
+            <form class='<?php echo $post ? "oculto" : "";?> form__main form_legajo' method="POST">
+                <fieldset>
+                    <div>
+                        <input type='text' name="legajo" class="input" value='<?php echo $legajoIngresado ?>' placeholder="Ingrese Su Legajo">
+                    </div>
+                    <input class='btn btn-cuadrado' type='submit' value='Buscar'>
+                </fieldset>
+            </form>
 
 
 
-                  <form class="<?php echo $post ? "" : "oculto"?> form_ingresar"        action="intro.php" >
+            <form class="<?php echo $post ? "" : "oculto"?> form_ingresar" action="intro.php">
 
-                        <div>
-                            <input type='text' name="legajo" class="input" value="<?php echo $legajoIngresado?>" placeholder="Ingrese Su Legajo">
-                        </div>
+                <div>
+                    <input type="text" name="legajo" class="input" value="<?php echo $legajoIngresado?>" placeholder="Ingrese Su Legajo">
+                </div>
 
-                        <div>
-                        <p class="input"><?php echo $nombre;?></p>
-                        </div>
+                <div>
+                    <p class="input"><?php echo $nombre;?></p>
+                </div>
 
-                        <p class="no-soy">No soy yo - <a href="#">contactar al administrador &raquo;</a> </p>
+                <p class="no-soy">No soy yo - <a href="#">contactar al administrador &raquo;</a> </p>
 
-                        <div>
-                        <!-- <input type="hidden" name="id" value="<?php echo $id?>"> -->
+                <div>
+                    <!-- <input type="hidden" name="id" value="<?php echo $id?>"> -->
 
-                            <input class='btn' type='submit' value='Entrar'>
-                        </div>
+                    <input class='btn' type='submit' value='Entrar'>
+                </div>
 
-                </form>
+            </form>
 
 
 

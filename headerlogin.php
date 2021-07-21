@@ -16,7 +16,8 @@
 
         <div class="contenido_header">
           <div class="imagen_header">
-                <img src="build/img/headerlogin.webp">
+                <img src="build/img/headerlogin.png">
             </div>
         </div>
+
         </header>

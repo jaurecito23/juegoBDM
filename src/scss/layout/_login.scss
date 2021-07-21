@@ -28,15 +28,17 @@
         width: 90%;
         margin: .1rem auto .2rem auto;
 
+            @include desktop{
+
+                width: 70%;
+
+            }
+
         form{
 
             border: none;
 
         }
-
-
-
-
     }
 
 
